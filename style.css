@@ -15,14 +15,14 @@ header {
     padding: 20px;
 }
 
-header > a {
-    text-decoration: none;
-}
-
-header > a > h1 {
+header > h1 {
     color: #25272E;
     text-align: center;
     font-family: Asap, sans-serif;
+}
+
+header > h1 > a {
+    text-decoration: none;
 }
 
 .score-board {
