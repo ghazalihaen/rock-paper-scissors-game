@@ -34,7 +34,7 @@ function win(userChoice, computerChoice) {
         choices_div.remove();
         userScore_span.innerHTML = userScore;
         result_div.classList.add('over');
-        result_p.innerHTML = 'You are win! 🏅';
+        result_p.innerHTML = 'You win! 🏅';
         actionMessage_div.innerHTML = "Refresh page to play again."
     }
 
@@ -42,7 +42,7 @@ function win(userChoice, computerChoice) {
         choices_div.remove();
         computerScore_span.innerHTML = computerScore;
         result_div.classList.add('over');
-        result_p.innerHTML = 'You are lose! 👎';
+        result_p.innerHTML = 'You lose! 👎';
         actionMessage_div.innerHTML = "Refresh page to play again."
     }
 
@@ -65,7 +65,7 @@ function lose(userChoice, computerChoice) {
         choices_div.remove();
         userScore_span.innerHTML = userScore;
         result_div.classList.add('over');
-        result_p.innerHTML = 'You are win! 🏅';
+        result_p.innerHTML = 'You win! 🏅';
         actionMessage_div.innerHTML = "Refresh page to play again."
     }
 
@@ -73,7 +73,7 @@ function lose(userChoice, computerChoice) {
         choices_div.remove();
         computerScore_span.innerHTML = computerScore;
         result_div.classList.add('over');
-        result_p.innerHTML = 'You are lose! 👎';
+        result_p.innerHTML = 'You lose! 👎';
         actionMessage_div.innerHTML = "Refresh page to play again."
     }
 
