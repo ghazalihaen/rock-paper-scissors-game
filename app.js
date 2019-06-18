@@ -47,7 +47,7 @@ function win(userChoice, computerChoice) {
         userScore_span.innerHTML = userScore;
         computerScore_span.innerHTML = computerScore;
         result_p.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(computerChoice)}. You win! 🔥`;
-        setTimeout(() => munculMenang(), 2000)
+        setTimeout(() => munculMenang(), 1500)
     }
 
     else {
@@ -70,7 +70,7 @@ function lose(userChoice, computerChoice) {
         userScore_span.innerHTML = userScore;
         computerScore_span.innerHTML = computerScore;
         result_p.innerHTML = `${convertToWord(userChoice)} loses to ${convertToWord(computerChoice)}. You lost.. 😛`;
-        setTimeout(() => munculKalah(), 2000)
+        setTimeout(() => munculKalah(), 1500)
     }
 
     else {
