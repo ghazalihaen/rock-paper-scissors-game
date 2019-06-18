@@ -70,7 +70,7 @@ function lose(userChoice, computerChoice) {
         userScore_span.innerHTML = userScore;
         computerScore_span.innerHTML = computerScore;
         result_p.innerHTML = `${convertToWord(userChoice)} loses to ${convertToWord(computerChoice)}. You lost.. 😛`;
-        setTimeout(() => munculKalah(), 3000)
+        setTimeout(() => munculKalah(), 2000)
     }
 
     else {
