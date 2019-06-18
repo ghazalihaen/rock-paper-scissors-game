@@ -47,7 +47,7 @@ function win(userChoice, computerChoice) {
         userScore_span.innerHTML = userScore;
         computerScore_span.innerHTML = computerScore;
         result_p.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(computerChoice)}. You win! 🔥`;
-        setTimeout(() => munculMenang(), 2500)
+        setTimeout(() => munculMenang(), 2000)
     }
 
     else {
