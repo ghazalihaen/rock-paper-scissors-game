@@ -7,11 +7,11 @@
 }
 
 body {
-    background-color: #292C34;
+    background-color: #ed7b39;
 }
 
 header {
-    background: white;
+    background: #c7d4e1;
     padding: 20px;
 }
 
@@ -39,7 +39,7 @@ a, a:visited {
 }
 
 .badge {
-    background: #E2584D;
+    background: #1a466b;
     color: white;
     font-size: 14px;
     padding: 2px 10px;
@@ -89,7 +89,7 @@ a, a:visited {
 
 .choice:hover { /*ini hover-nya*/
     cursor: pointer;
-    background: #24272E;
+    background: #ff9757;
 }
 
 .action-message {
