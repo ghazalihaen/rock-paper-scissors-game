@@ -4,10 +4,13 @@ let computerScore = 0;
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
 const scoreBoard_div = document.querySelector(".score-board");
+const result_div = document.querySelector(".result");
 const result_p = document.querySelector(".result > p"); //krn tulisannya di dlm tag p
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
+const choices_div = document.querySelector(".choices");
+const actionMessage_div = document.querySelector(".action-message");
 
 function getComputerChoice() {
     const choices = ['r', 'p', 's'];
@@ -25,24 +28,63 @@ function convertToWord(letter){ //ubah keluarannya jadi kata yg dimengerti manus
 function win(userChoice, computerChoice) {
     const userChoice_div = document.getElementById(userChoice);
     userScore++;
-    userScore_span.innerHTML = userScore;
-    computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(computerChoice)}. You win! 🔥`;
-    //tambah efek glow pada elemen apapun yg user pilih
-    userChoice_div.classList.add('green-glow'); //krn classList, gausah diawali titik lagi green-glow nya
-    //setTimeout(function() {userChoice_div.classList.remove('green-glow')}, 300)
-    setTimeout(() => userChoice_div.classList.remove('green-glow'), 300) //dibandingin style di atas, utk kasus seperti ini yg cuma 1 garis, pakai style ini aja
-}
+    //ini statement if yg aku tambahin sendiri, ga srek sih ditambahinnya kok disini??
+    //tapi paling ngga bisa jalan dengan baik wokwokwok
+    if (userScore === 5) {
+        choices_div.remove();
+        userScore_span.innerHTML = userScore;
+        result_div.classList.add('over');
+        result_p.innerHTML = 'You are win! 🏅';
+        actionMessage_div.innerHTML = "Refresh page to play again."
+    }
 
+    else if (computerScore === 5) {
+        choices_div.remove();
+        computerScore_span.innerHTML = computerScore;
+        result_div.classList.add('over');
+        result_p.innerHTML = 'You are lose! 👎';
+        actionMessage_div.innerHTML = "Refresh page to play again."
+    }
+
+    else {
+        userScore_span.innerHTML = userScore;
+        computerScore_span.innerHTML = computerScore;
+        result_p.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(computerChoice)}. You win! 🔥`;
+        //tambah efek glow pada elemen apapun yg user pilih
+        userChoice_div.classList.add('green-glow'); //krn classList, gausah diawali titik lagi green-glow nya
+        //setTimeout(function() {userChoice_div.classList.remove('green-glow')}, 300)
+        setTimeout(() => userChoice_div.classList.remove('green-glow'), 300) //dibandingin style di atas, utk kasus seperti ini yg cuma 1 garis, pakai style ini aja
+    }
+}
 function lose(userChoice, computerChoice) {
     const userChoice_div = document.getElementById(userChoice);
     computerScore++;
-    userScore_span.innerHTML = userScore;
-    computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = `${convertToWord(userChoice)} loses to ${convertToWord(computerChoice)}. You lost.. 😛`;
-    //tambah efek glow pada elemen apapun yg user pilih
-    userChoice_div.classList.add('red-glow'); //krn classList, gausah diawali titik lagi green-glow nya
-    setTimeout(() => userChoice_div.classList.remove('red-glow'), 300)
+    //ini statement if yg aku tambahin sendiri, ga srek sih ditambahinnya kok disini??
+    //tapi paling ngga bisa jalan dengan baik wokwokwok
+    if (userScore === 5) {
+        choices_div.remove();
+        userScore_span.innerHTML = userScore;
+        result_div.classList.add('over');
+        result_p.innerHTML = 'You are win! 🏅';
+        actionMessage_div.innerHTML = "Refresh page to play again."
+    }
+
+    else if (computerScore === 5) {
+        choices_div.remove();
+        computerScore_span.innerHTML = computerScore;
+        result_div.classList.add('over');
+        result_p.innerHTML = 'You are lose! 👎';
+        actionMessage_div.innerHTML = "Refresh page to play again."
+    }
+
+    else {
+        userScore_span.innerHTML = userScore;
+        computerScore_span.innerHTML = computerScore;
+        result_p.innerHTML = `${convertToWord(userChoice)} loses to ${convertToWord(computerChoice)}. You lost.. 😛`;
+        //tambah efek glow pada elemen apapun yg user pilih
+        userChoice_div.classList.add('red-glow'); //krn classList, gausah diawali titik lagi green-glow nya
+        setTimeout(() => userChoice_div.classList.remove('red-glow'), 300)
+    }
 }
 
 function draw(userChoice, computerChoice) {
