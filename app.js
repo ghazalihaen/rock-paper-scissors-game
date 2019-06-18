@@ -25,25 +25,29 @@ function convertToWord(letter){ //ubah keluarannya jadi kata yg dimengerti manus
 
 }
 
+function munculMenang() {
+    result_div.classList.add('over');
+    result_p.innerHTML = 'You win! 🏅';
+    actionMessage_div.innerHTML = "Refresh page to play again."
+}
+
+function munculKalah() {
+    result_div.classList.add('over');
+    result_p.innerHTML = 'You lose! 👎';
+    actionMessage_div.innerHTML = "Refresh page to play again."
+}
+
 function win(userChoice, computerChoice) {
     const userChoice_div = document.getElementById(userChoice);
     userScore++;
     //ini statement if yg aku tambahin sendiri, ga srek sih ditambahinnya kok disini??
     //tapi paling ngga bisa jalan dengan baik wokwokwok
-    if (userScore === 5) {
+    if (userScore === 5 || computerScore === 5) {
         choices_div.remove();
         userScore_span.innerHTML = userScore;
-        result_div.classList.add('over');
-        result_p.innerHTML = 'You win! 🏅';
-        actionMessage_div.innerHTML = "Refresh page to play again."
-    }
-
-    else if (computerScore === 5) {
-        choices_div.remove();
         computerScore_span.innerHTML = computerScore;
-        result_div.classList.add('over');
-        result_p.innerHTML = 'You lose! 👎';
-        actionMessage_div.innerHTML = "Refresh page to play again."
+        result_p.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(computerChoice)}. You win! 🔥`;
+        setTimeout(() => munculMenang(), 3000)
     }
 
     else {
@@ -61,20 +65,12 @@ function lose(userChoice, computerChoice) {
     computerScore++;
     //ini statement if yg aku tambahin sendiri, ga srek sih ditambahinnya kok disini??
     //tapi paling ngga bisa jalan dengan baik wokwokwok
-    if (userScore === 5) {
+    if (userScore === 5 || computerScore === 5) {
         choices_div.remove();
         userScore_span.innerHTML = userScore;
-        result_div.classList.add('over');
-        result_p.innerHTML = 'You win! 🏅';
-        actionMessage_div.innerHTML = "Refresh page to play again."
-    }
-
-    else if (computerScore === 5) {
-        choices_div.remove();
         computerScore_span.innerHTML = computerScore;
-        result_div.classList.add('over');
-        result_p.innerHTML = 'You lose! 👎';
-        actionMessage_div.innerHTML = "Refresh page to play again."
+        result_p.innerHTML = `${convertToWord(userChoice)} loses to ${convertToWord(computerChoice)}. You lost.. 😛`;
+        setTimeout(() => munculKalah(), 3000)
     }
 
     else {
